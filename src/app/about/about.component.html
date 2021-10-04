@@ -1,0 +1,31 @@
+<section id="about">
+  <div class="container">
+    <h1>Sobre nosotros</h1>
+    <hr />
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <img src="../../assets/images/logo.png" class="img-thumbnail" alt="" />
+      </div>
+      <div class="col-12 col-lg-8">
+        <p>
+          PizzaCo es una empresa de comida rápida colombiana de restaurantes,
+          especializada en la elaboración de pizzas. Con sede en Medellin,
+          Antioquia. Fundada por Alfredo Torres en 2009, quien había abierto su
+          primera pizzería en Cali (Valle del Cauca). En la actualidad cuenta
+          con más de 11 establecimientos alrededor del país.
+        </p>
+      </div>
+    </div>
+    <!-- Sección de Equipo de Trabajo. -->
+    <div class="row mt-5">
+      <h2>Equipo de Trabajo</h2>
+      <!-- empleados -->
+      <app-card *ngFor="let employee of team" [cardItem]="employee" class="col-12 col-md-6 col-xxl-3"></app-card>
+    </div>
+    <!-- Sección de testimonios de algunos clientes, imagen y frase corta. -->
+    <div class="row mt-5">
+      <h2>Testimonios de clientes</h2>
+      <app-card *ngFor="let witness of witnesses" [cardItem]="witness" class="col-12 col-md-6 col-xxl-3"></app-card>
+    </div>
+  </div>
+</section>

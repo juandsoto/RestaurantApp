@@ -1,0 +1,243 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "PizzaCO",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 13500,
+      "img": "menu/descargar.jfif",
+      "modal": "modal1",
+      "confirm": "confirm1"
+    },
+    {
+      "id": 2,
+      "name": "Pizza Ranchera",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 17000,
+      "img": "menu/41639.jpg",
+      "modal": "modal2",
+      "confirm": "confirm2"
+    },
+    {
+      "id": 3,
+      "name": "Pizza Bacon",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 20000,
+      "img": "menu/450_1000.jpg",
+      "modal": "modal3",
+      "confirm": "confirm3"
+    },
+    {
+      "id": 4,
+      "name": "Pizza Vegetariana",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 18500,
+      "img": "menu/istockphoto-842082336-612x612.jpg",
+      "modal": "modal4",
+      "confirm": "confirm4"
+    },
+    {
+      "id": 5,
+      "name": "Pizza Pocha",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 15000,
+      "img": "menu/images.jpg",
+      "modal": "modal5",
+      "confirm": "confirm5"
+    },
+    {
+      "id": 6,
+      "name": "Pizza Argentina",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 13000,
+      "img": "menu/pizza argentna.jpg",
+      "modal": "modal6",
+      "confirm": "confirm6"
+    },
+    {
+      "id": 7,
+      "name": "Alitas BBQ",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 10000,
+      "img": "menu/alitas-bbq-6-500x500.jpg",
+      "modal": "modal7",
+      "confirm": "confirm7"
+    },
+    {
+      "id": 8,
+      "name": "Bastones de Queso",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 8000,
+      "img": "menu/bastonesdequeso.jpg",
+      "modal": "modal8",
+      "confirm": "confirm8"
+    },
+    {
+      "id": 9,
+      "name": "Pizza Doble",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 19000,
+      "img": "menu/pizzax2.jpg",
+      "modal": "modal9",
+      "confirm": "confirm9"
+    },
+    {
+      "id": 10,
+      "name": "Ensalada",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 6000,
+      "img": "menu/ensalada.jpg",
+      "modal": "modal10",
+      "confirm": "confirm10"
+    },
+    {
+      "id": 11,
+      "name": "Panes",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 5500,
+      "img": "menu/panes.jpg",
+      "modal": "modal11",
+      "confirm": "confirm11"
+    },
+    {
+      "id": 12,
+      "name": "Pizza Hawaiana",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 12500,
+      "img": "menu/pizza hawaiana.jpg",
+      "modal": "modal12",
+      "confirm": "confirm12"
+    },
+    {
+      "id": 13,
+      "name": "Perro pama",
+      "description": "Perro pama con tocineta doble, con plátano maduro, salchicha americana, pan artesanal, salsa de la casa, lechuga, tomate, cebolla grille, y cabello de ángel",
+      "price": 12000,
+      "img": "menu/perro-tocineta-guacamole-maduro-1200x900.jpg",
+      "modal": "modal13",
+      "confirm": "confirm13"
+    },
+    {
+      "id": 14,
+      "name": "Hamburguesa argentina",
+      "description": "Elaborada con pan artesanal, 150 gr de carne, 100 gr de pechuga de pollo apanado, chorizo, chimichurri y salsa de la casa",
+      "price": 17000,
+      "img": "menu/LC25eDtCT_1256x620__1.jpg",
+      "modal": "modal14",
+      "confirm": "confirm14"
+    },
+    {
+      "id": 15,
+      "name": "Alitas BBQ",
+      "description": "Deliciosas alitas bbq acompañadas de papa a la francesa o croquetas de yuca, puedes adicionar le salsa búfalo o miel mostaza",
+      "price": 14000,
+      "img": "menu/alitas.jpg",
+      "modal": "modal15",
+      "confirm": "confirm15"
+    },
+    {
+      "id": 16,
+      "name": "Tacos",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quas!",
+      "price": 8500,
+      "img": "menu/tacos.jpg",
+      "modal": "modal16",
+      "confirm": "confirm16"
+    }
+  ],
+  "outstanding": [
+    {
+      "id": 13,
+      "name": "Perro pama",
+      "description": "Perro pama con tocineta doble, con plátano maduro, salchicha americana, pan artesanal, salsa de la casa, lechuga, tomate, cebolla grille, y cabello de ángel",
+      "price": 12000,
+      "img": "menu/perro-tocineta-guacamole-maduro-1200x900.jpg",
+      "modal": "modal17",
+      "confirm": "confirm17"
+    },
+    {
+      "id": 14,
+      "name": "Hamburguesa argentina",
+      "description": "Elaborada con pan artesanal, 150 gr de carne, 100 gr de pechuga de pollo apanado, chorizo, chimichurri y salsa de la casa",
+      "price": 17000,
+      "img": "menu/LC25eDtCT_1256x620__1.jpg",
+      "modal": "modal18",
+      "confirm": "confirm18"
+    },
+    {
+      "id": 15,
+      "name": "Alitas BBQ",
+      "description": "Deliciosas alitas bbq acompañadas de papa a la francesa o croquetas de yuca, puedes adicionar le salsa búfalo o miel mostaza",
+      "price": 14000,
+      "img": "menu/alitas.jpg",
+      "modal": "modal19",
+      "confirm": "confirm19"
+    }
+  ],
+  "witnesses1": [
+    {
+      "name": "Marco Antonio",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio1.png"
+    },
+    {
+      "name": "Luisa",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio2.png"
+    },
+    {
+      "name": "Laura",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio3.png"
+    },
+    {
+      "name": "Will",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio4.jpg"
+    }
+  ],
+  "witnesses2": [
+    {
+      "name": "Luis",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio5.png"
+    },
+    {
+      "name": "Katherine",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio6.jpg"
+    },
+    {
+      "name": "Jorge",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio7.jpg"
+    },
+    {
+      "name": "Sara",
+      "description": "Es un lugar increíble, la comida y la atención son inmejorables",
+      "img": "testimonios/testimonio8.jpg"
+    }
+  ],
+  "team": [
+    {
+      "name": "Fabio Martinez",
+      "description": "Gerente General",
+      "img": "equipo/gerente.jpg"
+    },
+    {
+      "name": "Maria Ortega & Julian Perez",
+      "description": "Chef Internacional",
+      "img": "equipo/chef.png"
+    },
+    {
+      "name": "Edgar Puentes",
+      "description": "Contador",
+      "img": "equipo/contador.jpg"
+    },
+    {
+      "name": "Andres Garcia",
+      "description": "Publicidad y Marketing General",
+      "img": "equipo/publica.jpg"
+    }
+  ]
+}

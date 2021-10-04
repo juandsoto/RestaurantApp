@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-size: 20px;
+}
+
+section{
+	padding-top: 100px;
+}
+
+iframe {
+	width: 100%;
+}
+
+.substract-button,
+.add-button {
+	width: 40px;
+}
+
+.carousel-item > img {
+	min-width: 100%;
+	height: auto;
+	min-height: 300px;
+	max-height: 700px;
+}
+
+.navbar-brand{
+	color: #fff !important;
+}
+
+.nav-link{
+	text-decoration: none;
+	color: #fff !important;
+}
+
+.nav-item > a > i {
+	color: #fff;
+}
+
+.card{
+	min-width: 300px;
+	max-width: 500px;
+}
+
+/*.img-thumbnail{
+	width: 350px;
+	height: 300px;
+}*/
+
+/* Formulario */
+
+.contacto h1{
+	text-align: center;
+	font-size: 40px;
+	padding: 30px;
+}
+
+.form-group{
+	margin: 20px;
+}
+
+.form-floating #floatingInput:focus, #floatingSelect:focus, #floatingTextarea:focus{
+	border-bottom: 2px solid blue;
+	transition: all 300ms;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+	height: calc(4rem + 2px);
+	line-height: 1.25;
+}
+
+#btnEnviar{
+	width: 100%;
+	margin-top: 20px;
+}
+
+.form-check{
+	margin: 20px;
+	font-size: 18px;
+}
+
+.form-check-label{
+	color: rgb(75, 75, 75);
+}
+
+/* MENU  */
+
+.cardPizza{
+	margin-bottom: 40px;
+}
+
+.detallesPizza{
+	font-size: 21px;
+	height: 45px;
+	color: white;
+	border: none;
+	transition: all 300ms;
+}
+
+/*.modalImgPizza{
+	width: 100%;
+}*/
+
+.modalContactoPizza{
+	width: 100%;
+}
+
+.menu-link-1,
+.menu-link-2,
+.menu-link-3 {
+	cursor: pointer;
+}
+
+@media (min-width: 200px){
+	.carousel-caption{
+		font-size: 10px;
+	}
+}
+@media (min-width: 500px){
+	.carousel-caption{
+		font-size: 15px;
+	}
+}

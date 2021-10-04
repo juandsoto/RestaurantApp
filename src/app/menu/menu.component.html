@@ -1,0 +1,236 @@
+<section id="menu">
+	<div class="container">
+		<div>
+			<h1>Menú</h1>
+			<div>
+				<a
+					class="btn btn-warning"
+					href="../../assets/images/menu.pdf"
+					download="pizzaCO-menu"
+				>
+					Descargar Menú
+				</a>
+			</div>
+			<hr />
+		</div>
+		<div class="row">
+			<app-product
+				class="col-12 col-md-6 col-lg-4 col-xxl-3"
+				*ngFor="let product of products.slice(start, end)"
+				[product]="product"
+			></app-product>
+		</div>
+	</div>
+	<!-- Paginacion -->
+	<div class="container">
+		<nav aria-label="Page navigation example">
+			<ul class="pagination pagination-lg justify-content-center">
+				<li class="page-item" [ngClass]="{'active': (start === 0)? true: false}">
+					<a (click)="changePage(1)" class="page-link" href="#menu">
+						1
+					</a>
+				</li>
+				<li class="page-item" [ngClass]="{'active': (start === 12)? true: false}">
+					<a (click)="changePage(2)" class="page-link" href="#menu">
+						2
+					</a>
+				</li>
+				<li class="page-item disabled" [ngClass]="{'active': (start === 24)? true: false}">
+					<a (click)="changePage(3)" class="page-link" href="#menu">
+						3
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Cart Modal -->
+	<div
+		class="modal fade"
+		id="cartModal"
+		tabindex="-1"
+		aria-labelledby="cartModal"
+		aria-hidden="true"
+	>
+		<div
+			class="
+				modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-sm-down
+			"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModal">Carrito de compras</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<app-cart></app-cart>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+						Salir
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Checkout Modal -->
+	<div
+		class="modal fade"
+		id="checkoutModal"
+		aria-hidden="true"
+		aria-labelledby="checkoutModalLabel"
+		tabindex="-1"
+		data-bs-backdrop="static"
+	>
+		<div
+			class="
+				modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-lg-down
+			"
+		>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="checkoutModalLabel">Terminar Pedido</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div *ngIf="checkout" class="modal-body">
+					<div>
+						<div class="table-responsive">
+							<table class="table text-center">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Nombre</th>
+										<th scope="col">Unitario</th>
+										<th scope="col">Cantidad</th>
+										<th scope="col">Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let product of checkout.products; let i = index">
+										<th scope="row">{{ i + 1 }}</th>
+										<td>{{ product.name }}</td>
+										<td>
+											{{
+												product.price | currency: 'COP':'symbol-narrow':'4.0-2'
+											}}
+										</td>
+										<td>{{ product.quantity }}</td>
+										<td>
+											{{
+												product.price * product.quantity!
+													| currency: 'COP':'symbol-narrow':'4.0-2'
+											}}
+										</td>
+									</tr>
+									<tr class="bg-warning">
+										<th scope="row">TOTAL</th>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											{{
+												checkout.total | currency: 'COP':'symbol-narrow':'4.0-2'
+											}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<form action="https://formspree.io/f/xbjqbgko" method="POST">
+							<input type="hidden" name="_language" value="es" />
+							<input
+								type="hidden"
+								name="_subject"
+								value="RestaurantApp - Checkout Form"
+							/>
+							<!-- Campo para el Nombre Completo -->
+							<div class="form-group">
+								<div class="form-floating mb-3">
+									<input
+										name="nombre"
+										type="text"
+										class="form-control"
+										id="floatingInput"
+										required
+										pattern="[a-z A-Z]{3,45}"
+									/>
+									<label for="floatingInput">Nombre Completo</label>
+								</div>
+							</div>
+
+							<!-- Campo par el Email -->
+							<div class="form-group">
+								<div class="form-floating mb-3">
+									<input
+										name="email"
+										type="email"
+										class="form-control"
+										id="floatingInput"
+										required
+										minlength="10"
+										maxlength="125"
+									/>
+									<label for="floatingInput">Correo Electronico</label>
+								</div>
+							</div>
+							<input
+								*ngFor="let product of checkout.products"
+								type="hidden"
+								[name]="product.name"
+								value="{{ product.price }} * {{ product.quantity }} = {{
+									product.price * product.quantity!
+								}}"
+							/>
+							<input type="hidden" name="Total" [value]="checkout.total" />
+
+							<!-- Checkbox tratamiento de datos -->
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									value=""
+									id="flexCheckDefault"
+									required
+								/>
+								<label class="form-check-label" for="flexCheckDefault">
+									Acepto el Tratamiento de datos personales.
+								</label>
+
+								<!-- Boton para envio del Formulario -->
+								<div class="form-group">
+									<input
+										class="btn btn-primary w-100"
+										type="submit"
+										id="btnEnviar"
+										value="Enviar"
+										(click)="clearCart()"
+									/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button
+						class="btn btn-primary"
+						data-bs-target="#cartModal"
+						data-bs-toggle="modal"
+					>
+						Volver
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

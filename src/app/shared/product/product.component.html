@@ -1,0 +1,203 @@
+<div class="card cardPizza">
+	<img
+		src="../../../assets/images/{{ product.img }}"
+		class="card-img-top"
+		height="200px"
+		alt="..."
+	/>
+	<div class="card-body">
+		<p class="card-text">{{ product.description }}</p>
+	</div>
+	<!-- Carrito de compras -->
+	<div class="d-flex justify-content-around mx-2 my-1">
+    <button
+      [hidden]="quantity === 0"
+			type="button"
+			class="btn btn-warning"
+			data-bs-toggle="modal"
+			attr.data-bs-target="#{{ product.confirm }}"
+		>
+      <i class="fas fa-cart-plus"></i>
+		</button>
+		<button (click)="substractQty()" class="btn btn-danger">
+			-
+		</button>
+		<span>{{ quantity }}</span>
+		<button (click)="addQty()" class="btn btn-success">+</button>
+	</div>
+	<!-- Button trigger modal -->
+	<button
+		id="button-modal"
+		type="button"
+		class="product-name btn btn-primary detallesPizza"
+		data-bs-toggle="modal"
+		attr.data-bs-target="#{{ product.modal }}"
+	>
+		{{ product.name }}
+	</button>
+
+	<!-- Product Modal -->
+	<div
+		class="div-modal modal fade"
+		[id]="product.modal"
+		tabindex="-1"
+		[attr.aria-labelledby]="product.modal"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLabel">Detalles</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					<!-- Detalles del Item -->
+					<div class="container">
+						<div class="row">
+							<!-- Imagen -->
+							<div class="col-12 col-lg-6">
+								<img
+									src="../../../assets/images/{{ product.img }}"
+									class="img-modal img-thumbnail"
+									alt="..."
+								/>
+							</div>
+							<!-- Mas Detalles -->
+							<div class="col-12 col-lg-6">
+								<h2 class="display-6">{{ product.name }}</h2>
+								<p>{{ product.price | currency:'COP':'symbol-narrow':'4.0-2' }}</p>
+								<div
+									class="accordion accordion-flush accordionPizza"
+									id="accordionFlushExample"
+								>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="flush-headingOne">
+											<button
+												class="accordion-button collapsed"
+												type="button"
+												data-bs-toggle="collapse"
+												data-bs-target="#flush-collapseOne"
+												aria-expanded="true"
+												aria-controls="flush-collapseOne"
+											>
+												Reseña
+											</button>
+										</h2>
+										<div
+											id="flush-collapseOne"
+											class="accordion-collapse collapse"
+											aria-labelledby="flush-headingOne"
+											data-bs-parent="#accordionFlushExample"
+										>
+											<div class="accordion-body">
+												{{ product.description }}
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="flush-headingTwo">
+											<button
+												class="accordion-button collapsed"
+												type="button"
+												data-bs-toggle="collapse"
+												data-bs-target="#flush-collapseTwo"
+												aria-expanded="false"
+												aria-controls="flush-collapseTwo"
+											>
+												Ingredientes
+											</button>
+										</h2>
+										<div
+											id="flush-collapseTwo"
+											class="accordion-collapse collapse"
+											aria-labelledby="flush-headingTwo"
+											data-bs-parent="#accordionFlushExample"
+										>
+											<div class="accordion-body">
+												<ul>
+													<li>Carne de cerdo</li>
+													<li>Carne de res</li>
+													<li>Pollo</li>
+													<li>Queso mozzarella</li>
+													<li>Maíz tierno</li>
+													<li>Salsa boloñesa</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<button
+                    type="menu"
+										class="btn btn-primary modalContactoPizza"
+										id="modalContactoPizza"
+                    data-bs-dismiss="modal"
+									>
+                  Contáctenos
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button
+						type="button"
+						class="btn btn-secondary"
+						data-bs-dismiss="modal"
+					>
+						Cerrar
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Confirm Modal -->
+	<div
+		class="modal fade"
+		[attr.id]="product.confirm"
+		tabindex="-1"
+		[attr.aria-labelledby]="product.confirm"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModal">Confirmar</h5>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="modal-body">
+					¿ Estás seguro que deseas agregar {{ quantity }} {{ product.name }} al
+					carrito ?
+				</div>
+				<div class="modal-footer">
+					<button
+						type="button"
+						class="btn btn-secondary"
+						data-bs-dismiss="modal"
+					>
+						Cancelar
+					</button>
+					<button
+						type="button"
+						class="btn btn-primary"
+            data-bs-target="#added"
+						(click)="addToCart()"
+						data-bs-dismiss="modal"
+					>
+						Seguro
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

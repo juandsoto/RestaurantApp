@@ -1,0 +1,75 @@
+<div class="container">
+  <div *ngIf="products.length === 0" class="d-flex">
+    <h2>
+      No hay productos en el carrito de compras
+    </h2>
+  </div>
+	<div *ngIf="products.length > 0" class="row">
+		<div class="col-12 col-xl-9">
+			<div class="row">
+				<div
+					class="col-12 col-lg-6"
+					*ngFor="let product of products"
+				>
+					<div class="card cardPizza">
+						<img
+							src="../../../assets/images/{{ product.img }}"
+							class="card-img-top"
+							height="200px"
+							alt="..."
+						/>
+						<button
+							(click)="deleteProduct(product.id)"
+							class="btn btn-danger btn-delete m-2 float-end"
+						>
+							<i class="fas fa-trash-alt fa-2x"></i>
+						</button>
+						<div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{product.price | currency: 'COP':'symbol-narrow':'4.0-2'}}</h6>
+							<p class="product-description card-text">
+								{{ product.description }}
+							</p>
+						</div>
+						<!-- Carrito de compras -->
+						<div class="d-flex justify-content-between mx-2 my-1">
+							<button
+								(click)="substractQty(product)"
+								class="btn btn-danger substract-button"
+							>
+								-
+							</button>
+							<span class="product-quantity">{{ product.quantity }}</span>
+							<button
+								(click)="addQty(product)"
+								class="btn btn-success add-button"
+							>
+								+
+							</button>
+							<span>
+								{{
+									product.price * product.quantity!
+										| currency: 'COP':'symbol-narrow':'4.0-2'
+								}}
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-xl-3 d-flex justify-content-center pt-2">
+			<div class=" d-block text-center w-100 h-100">
+				<h2>Total</h2>
+				<p>{{ getTotal() | currency: 'COP':'symbol-narrow':'4.0-2' }}</p>
+        <button
+						type="button"
+						class="btn btn-warning w-100"
+            data-bs-target="#checkoutModal" data-bs-toggle="modal"
+            (click)="checkout()"
+					>
+          Finalizar Pedido
+					</button>
+			</div>
+		</div>
+	</div>
+</div>
