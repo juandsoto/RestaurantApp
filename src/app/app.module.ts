@@ -22,7 +22,7 @@ import { CartComponent } from './cart/cart.component';
     AboutComponent,
     ServicesComponent,
     ContactComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,
